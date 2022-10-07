@@ -1,0 +1,118 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    background: linear-gradient(107.12deg, #1F1E21 -1.4%, #141316 100.69%);
+}
+:root{
+    --acent-color:#F2C94C;
+    --text-color: #F6F6F6;
+    --subtext-color: #C0C0C0;
+    --text-desactive: #4D4D4D;
+
+
+
+}
+main{
+    max-width: 900px;
+    display: flex;
+    margin: auto;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img{
+    width: 35%;
+}
+
+.accordion{
+    width: 50%;
+}
+h2{
+    font-family: "Rubik";
+    font-size: 4.2rem;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+}
+h2 span{
+    color: var(--acent-color);
+}
+
+dt, dd{
+    font-family: "Karla";
+}
+
+ dt ~ dt::before{
+    content: "";
+    width: calc(100% + 6rem);
+    height: 1px;
+    background: linear-gradient(90deg, #C9C9C9 0%, #353435 100%);
+    display: block;
+    margin-bottom: 2rem;
+}
+dt{
+    font-size: 2rem;
+    color: var(--text-color) ;
+    cursor: pointer;
+    margin-bottom: 2.2rem;
+    position: relative;
+    padding-right: 6rem;
+    transition: font-weight 300ms;
+}
+
+dt::after{
+    content: "";
+    background-image: url(../img/icon-faq.svg);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+dt:first-of-type::after{
+    transform: translateY(-50%);
+}
+
+dt.ativo{
+    font-weight: bold;
+}
+
+dt.ativo::after{
+    transform: rotate(180deg);
+    transition-duration: 300ms;
+
+}
+dd{
+   max-height: 0;
+   overflow: hidden;
+   transition: max-height 300ms ease-in-out;
+   font-size: 1.8rem;
+   color: var(--subtext-color);
+   line-height: 140%; 
+}
+
+dd.ativo{
+    max-height: 100px;  
+    margin-bottom: 2rem;
+}
+
+dt.ativo + dd{
+   max-height: 100px;  
+   margin-bottom: 2rem;
+
+} 
+.desativado {
+    color: var(--text-desactive);
+}
+
